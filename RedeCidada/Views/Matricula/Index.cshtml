@@ -1,0 +1,83 @@
+﻿@using GridMvc.Html
+@model RedeCidadaMT.Models.MatriculaListaModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdm.cshtml";
+
+}
+
+<h2>Alunos Matriculados</h2>
+
+<fieldset>
+    <legend>
+        Filtros
+        <span style="cursor: pointer" class="glyphicon glyphicon-plus btnFilter" aria-hidden="true"></span>
+        <span style="cursor: pointer" title="Imprimir relatório" class="glyphicon glyphicon-print btnRelatorio" aria-hidden="true"></span>
+
+    </legend>
+    @using (Html.BeginForm("Buscar", "Matricula", FormMethod.Post, new { }))
+    {
+        <div class="filter_container" style="display:none;">
+
+            <div class="row">
+
+                <div class="col-lg-6">
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.NomeAluno)
+                        @Html.TextBoxFor(model => model.NomeAluno, new { @class = "form-control nome_aluno" })
+                    </div>
+
+                </div>
+                <div class="col-lg-6">
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Escola)
+                        @Html.TextBoxFor(model => model.Escola, new { @class = "form-control escola" })
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Ano)
+                        @Html.DropDownListFor(model => model.Ano, Model.LstAno, "***Selecione***", new { @class = "form-control ddlAno" })
+                    </div>
+
+                </div>
+                <div class="col-lg-10">
+
+                </div>
+
+
+            </div>
+
+            <hr />
+
+            <button class="btn btn-primary" type="submit">
+                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp;Buscar
+            </button>
+
+        </div>
+    }
+
+</fieldset>
+
+
+@Html.Grid(Model.Matriculas).Columns(colunas =>
+{
+
+    colunas.Add(matricula => matricula.Id).Titled("Cód").SetWidth("5%");
+    colunas.Add(matricula => matricula.Nome).Titled("Nome do Aluno").SetWidth("70%");
+
+    colunas.Add().Encoded(false).Sanitized(false).RenderValueAs(matricula => Html.ActionLink("Ficha", "FichaInscricao", new { Id = matricula.Id }));
+    colunas.Add().Encoded(false).Sanitized(false).RenderValueAs(matricula => Html.ActionLink("Editar", "Editar", new { Id = matricula.Id }));
+    colunas.Add().Encoded(false).Sanitized(false).RenderValueAs(matricula => Html.ActionLink("Excluir", "Excluir", new { Id = matricula.Id }));
+
+
+}).WithPaging(10).Sortable()
+
+<script type="text/javascript" src="~/Scripts/sistema/listamatricula.js"></script>

@@ -1,0 +1,100 @@
+﻿    <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    
+    <link href="@Url.Content("~/Content/Gridmvc.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/custom.css")" rel="stylesheet" type="text/css" />
+
+    <script src="@Url.Content("~/Scripts/mask/jquery.mask.js")" type="text/javascript"> </script>
+    <script src="@Url.Content("~/Scripts/gridmvc.min.js")" type="text/javascript"> </script>
+    <script src="@Url.Content("~/Scripts/core.js")" type="text/javascript"> </script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            var mensagem = '@ViewBag.Mensagem';
+
+            if (mensagem) {
+                core.alert('@ViewBag.Title', mensagem);
+            }
+        });
+    </script>
+
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href='@Url.Action("Index", "Matricula")'>
+                    <img alt="Rede Cidadã" src="~/Content/img/logo-redecidada.jpg" width="25" />
+                </a>
+
+                @Html.ActionLink("Rede Cidadã", "Index", "Matricula", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Professor <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Cadastrar", "Cadastrar", "Professor")</li>
+                            <li>@Html.ActionLink("Professores", "Index", "Professor")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Atividade <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Cadastrar", "Cadastrar", "Atividade")</li>
+                            <li>@Html.ActionLink("Atividades", "Index", "Atividade")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Usuário <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Cadastrar", "Cadastrar", "Usuario")</li>
+                            <li>@Html.ActionLink("Usuários", "Index", "Usuario")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Demanda <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Cadastrar", "Cadastrar", "Demanda")</li>
+                            <li>@Html.ActionLink("Demandas", "Index", "Demanda")</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        
+        </div>
+
+    </div>
+    <div class="container body-content">
+        <div style="min-height:400px;">
+            @RenderBody()
+        </div>
+        
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Sistema de Matrículas</p>  @Html.ActionLink("Sair", "LogOut", "Inicio" )
+        </footer>
+    </div>
+
+
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

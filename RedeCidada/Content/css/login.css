@@ -1,0 +1,96 @@
+﻿body {
+
+    width:100%;
+    margin:0;
+    overflow:hidden;
+
+}
+
+.header {
+    border: solid 1px #ccc;
+    background-color:#79BEDB;
+    float:left;
+    width:99.5%
+}
+
+.header .logo {
+        
+        float:left;
+        padding:10px;
+        padding-left:100px;
+
+    }
+
+.header .logo img{
+        
+        width:75px;
+        border-radius:50%;
+        
+    }
+
+.header .titulo {
+        font-family: Arial;
+        font-size: 25px;
+        color: #fff;
+        float:left;
+    }
+
+.content {
+
+}
+
+.slider {
+    border-top:solid 2px #eee;
+    float:left;
+    width:99.6%;
+
+} 
+
+.slider img{
+    width:100%;
+    float:left;
+    opacity:0.5;
+}
+
+.login_box {
+    background-color:#fff;
+    width:600px;
+    height:400px;
+    top:50%;
+    left:50%;
+    position:absolute;
+    margin-top: -200px;
+    margin-left: -300px;
+    border-radius:10px;
+    border:solid 2px #ccc;
+    font-family:Arial;
+    color:cadetblue;
+    padding:5px
+}
+
+    .login_box input {
+        margin-top:5px;
+        width: 95%;
+        border-radius: 5px;
+        height: 20px;
+        padding:5px;
+    }
+
+.login_box label{
+    font-size:14px;
+    font-weight:bold;
+}
+
+.login_box button{
+    
+    background-color: cadetblue;
+    color:#fff;
+    font-size:14px;
+    padding:5px;
+    padding-left:15px;
+    padding-right:15px;
+    cursor:pointer;
+    font-weight:bold;
+    border-radius:5px;
+}
+

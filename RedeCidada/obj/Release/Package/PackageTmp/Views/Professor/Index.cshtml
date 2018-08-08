@@ -1,0 +1,19 @@
+﻿@using GridMvc.Html
+@model List<Entidades.Professor>
+
+@{
+    ViewBag.Title = "Professores";
+    Layout = "~/Views/Shared/_LayoutAdm.cshtml";
+}
+
+<h2>Professores</h2>
+
+@Html.Grid(Model).Columns(colunas =>
+{
+
+    colunas.Add(professor => professor.Id).Titled("Cód").SetWidth(20);
+    colunas.Add(professor => professor.Nome).Titled("Nome").SetWidth(200);
+    colunas.Add(professor => professor.Polo).Titled("Polo").SetWidth(200);
+
+
+}).Sortable()

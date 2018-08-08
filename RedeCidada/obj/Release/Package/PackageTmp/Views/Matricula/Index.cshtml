@@ -1,0 +1,33 @@
+﻿@using GridMvc.Html
+@model List<Entidades.Matricula>
+
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Alunos Matriculados</h2>
+
+<form class="form-inline ">
+
+    <div class="form-group">
+        <label for="txtNomeAluno">Nome do Aluno</label>
+        <input type="text" id="txtNomeAluno" class="form-control" />
+    </div>
+
+</form>
+
+
+@Html.Grid(Model).Columns(colunas =>
+{
+
+    colunas.Add(matricula => matricula.Id).Titled("Cód").SetWidth("5%");
+    colunas.Add(matricula => matricula.Nome).Titled("Nome do Aluno").SetWidth("50%");
+    colunas.Add(matricula => matricula.DataCadastro).Titled("Data de Cadastro");
+
+    colunas.Add().Encoded(false).Sanitized(false).RenderValueAs(matricula => Html.ActionLink("Visualizar", "Visualizar", new { Id = matricula.Id }));
+    
+
+}).Sortable()

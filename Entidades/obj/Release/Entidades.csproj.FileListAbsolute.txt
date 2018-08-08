@@ -1,0 +1,5 @@
+C:\Users\compaq\Documents\Projetos\RedeCidada\Entidades\bin\Release\Entidades.dll
+C:\Users\compaq\Documents\Projetos\RedeCidada\Entidades\bin\Release\Entidades.pdb
+C:\Users\compaq\Documents\Projetos\RedeCidada\Entidades\obj\Release\Entidades.csprojResolveAssemblyReference.cache
+C:\Users\compaq\Documents\Projetos\RedeCidada\Entidades\obj\Release\Entidades.dll
+C:\Users\compaq\Documents\Projetos\RedeCidada\Entidades\obj\Release\Entidades.pdb

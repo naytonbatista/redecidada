@@ -1,0 +1,9 @@
+C:\Users\compaq\Documents\Projetos\RedeCidada\Repository\bin\Release\Repository.dll.config
+C:\Users\compaq\Documents\Projetos\RedeCidada\Repository\bin\Release\Repository.dll
+C:\Users\compaq\Documents\Projetos\RedeCidada\Repository\bin\Release\Repository.pdb
+C:\Users\compaq\Documents\Projetos\RedeCidada\Repository\bin\Release\Entidades.dll
+C:\Users\compaq\Documents\Projetos\RedeCidada\Repository\bin\Release\MySql.Data.dll
+C:\Users\compaq\Documents\Projetos\RedeCidada\Repository\bin\Release\Entidades.pdb
+C:\Users\compaq\Documents\Projetos\RedeCidada\Repository\obj\Release\Repository.csprojResolveAssemblyReference.cache
+C:\Users\compaq\Documents\Projetos\RedeCidada\Repository\obj\Release\Repository.dll
+C:\Users\compaq\Documents\Projetos\RedeCidada\Repository\obj\Release\Repository.pdb

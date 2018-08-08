@@ -1,0 +1,17 @@
+﻿@using GridMvc.Html
+@model List<Entidades.Atividade>
+
+
+@{
+    ViewBag.Title = "Atividade";
+    Layout = "~/Views/Shared/_LayoutAdm.cshtml";
+}
+
+<h2>Atividades</h2>
+
+@Html.Grid(Model).Columns(colunas => {
+
+    colunas.Add(atividade => atividade.Id).Titled("Cód").SetWidth(20);
+    colunas.Add(atividade => atividade.Nome).Titled("Nome").SetWidth(200);
+
+}).Sortable()

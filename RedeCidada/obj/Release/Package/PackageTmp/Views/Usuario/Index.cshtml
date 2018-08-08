@@ -1,0 +1,19 @@
+﻿@using GridMvc.Html
+@model List<Entidades.Usuario>
+
+@{
+    ViewBag.Title = "Usuário";
+    Layout = "~/Views/Shared/_LayoutAdm.cshtml";
+}
+
+<h2>Usuários</h2>
+
+@Html.Grid(Model).Columns(colunas =>
+{
+
+    colunas.Add(usuario => usuario.Id).Titled("Cód").SetWidth(20);
+    colunas.Add(usuario => usuario.Nome).Titled("Nome").SetWidth(200);
+    colunas.Add(usuario => usuario.Login).Titled("Login").SetWidth(200);
+    
+
+}).EmptyText("Nennhum Usuário Cadastrado").Sortable()

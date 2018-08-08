@@ -1,0 +1,14 @@
+C:\Users\compaq\Documents\Projetos\RedeCidada\Entidades\bin\Debug\Entidades.dll
+C:\Users\compaq\Documents\Projetos\RedeCidada\Entidades\bin\Debug\Entidades.pdb
+C:\Users\compaq\Documents\Projetos\RedeCidada\Entidades\obj\Debug\Entidades.dll
+C:\Users\compaq\Documents\Projetos\RedeCidada\Entidades\obj\Debug\Entidades.pdb
+C:\Users\vaio\Dropbox\RedeCidada\Entidades\bin\Debug\Entidades.dll
+C:\Users\vaio\Dropbox\RedeCidada\Entidades\bin\Debug\Entidades.pdb
+C:\Users\vaio\Dropbox\RedeCidada\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
+C:\Users\vaio\Dropbox\RedeCidada\Entidades\obj\Debug\Entidades.dll
+C:\Users\vaio\Dropbox\RedeCidada\Entidades\obj\Debug\Entidades.pdb
+C:\Users\compaq\Dropbox\RedeCidada\Entidades\bin\Debug\Entidades.dll
+C:\Users\compaq\Dropbox\RedeCidada\Entidades\bin\Debug\Entidades.pdb
+C:\Users\compaq\Dropbox\RedeCidada\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
+C:\Users\compaq\Dropbox\RedeCidada\Entidades\obj\Debug\Entidades.dll
+C:\Users\compaq\Dropbox\RedeCidada\Entidades\obj\Debug\Entidades.pdb

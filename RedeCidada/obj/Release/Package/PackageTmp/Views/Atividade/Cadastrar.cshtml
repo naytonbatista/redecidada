@@ -1,0 +1,31 @@
+﻿@model RedeCidada.Models.AtividadeModel
+
+@{
+    ViewBag.Title = "Cadastrar Atividade";
+    Layout = "~/Views/Shared/_LayoutAdm.cshtml";
+}
+
+<h2>Cadastro de Atividade</h2>
+
+@using(Html.BeginForm("Cadastrar", "Atividade", FormMethod.Post, new { })){
+<div class="form-group" >
+    
+    <div style="min-height:400px;">
+        @Html.LabelFor(model => model.Nome)
+        @Html.TextBoxFor(model => model.Nome, new { @class = "form-control" })
+    </div>
+    <hr/>
+
+    <button class="btn btn-primary" type="submit">
+        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>&nbsp;Cadastrar
+    </button>
+
+</div>
+}
+
+
+
+        
+
+
+

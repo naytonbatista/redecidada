@@ -1,0 +1,198 @@
+﻿@model RedeCidada.Models.MatriculaModel
+
+@{
+    ViewBag.Title = "Editar Matrícula";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Editar Aluno</h2>
+
+@using (Html.BeginForm("Editar", "Matricula", FormMethod.Post, new { }))
+{
+
+@Html.AntiForgeryToken()
+
+
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Nome)
+                @Html.TextBoxFor(model => model.Nome, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                @Html.LabelFor(model => model.NomeMae)
+                @Html.TextBoxFor(model => model.NomeMae, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.NomeMae, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                @Html.LabelFor(model => model.NomePai)
+                @Html.TextBoxFor(model => model.NomePai, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.NomePai, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group">
+
+            <div class="col-md-4">
+                @Html.LabelFor(model => model.Endereco)
+                @Html.TextBoxFor(model => model.Endereco, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Endereco, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-4">
+                @Html.LabelFor(model => model.Estado)
+                @Html.DropDownListFor(model => model.Estado, Model.LstEstados, "***Selecione***", new { @class = "form-control ddlEstados" })
+                @Html.ValidationMessageFor(model => model.Estado, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-4">
+                @Html.LabelFor(model => model.Municipio)
+                @Html.DropDownListFor(model => model.Municipio, Model.LstMunicipios, "***Selecione***", new { @class = "form-control ddlMunicipios" })
+                @Html.ValidationMessageFor(model => model.Municipio, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                @Html.LabelFor(model => model.DataNascimento)
+                @Html.TextBoxFor(model => model.DataNascimento, "", new { @class = "form-control data_nascimento" })
+                @Html.ValidationMessageFor(model => model.DataNascimento, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Naturalidade)
+                @Html.TextBoxFor(model => model.Naturalidade, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Naturalidade, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Telefone)
+                @Html.TextBoxFor(model => model.Telefone, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Telefone, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Escola)
+                @Html.TextBoxFor(model => model.Escola, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Escola, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Professor)
+                @Html.DropDownListFor(model => model.Professor, Model.LstProfessores, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Professor, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Nucleo)
+                @Html.TextBoxFor(model => model.Nucleo, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Nucleo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Turno)
+                @Html.DropDownListFor(model => model.Turno, Model.LstTurnos, "***Selecione***", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Turno, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Serie)
+                @Html.TextBoxFor(model => model.Serie, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Serie, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <fieldset>
+                <legend>Demanda</legend>
+
+                @foreach (var demanda in Model.LstDemanda)
+                {
+                    <div class="col-md-3">
+
+                        <div class="radio-inline">
+                            <label> @Html.RadioButtonFor(model => model.Demanda, demanda.Id) @demanda.Nome</label>
+                        </div>
+                    </div>
+                }
+
+            </fieldset>
+            @Html.ValidationMessageFor(model => model.Demanda, "", new { @class = "text-danger" })
+
+        </div>
+
+        <div class="col-md-6">
+            <fieldset>
+                <legend>Atividades</legend>
+
+                @for (int i = 0; i < Model.LstAtividades.Count; i++)
+                {
+                    <div class="col-md-3">
+
+                        <div class="checkbox-inline">
+                            <label> @Html.CheckBox("ck", Model.Atividades.Any(x => x == @Model.LstAtividades[i].Id)) @Model.LstAtividades[i].Nome</label>
+                        </div>
+                    </div>
+                }
+                <div class="atividades"></div>
+
+            </fieldset>
+            @Html.ValidationMessageFor(model => model.Atividades, "", new { @class = "text-danger" })
+
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Observacoes)
+                @Html.TextAreaFor(model => model.Observacoes, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Serie, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <hr />
+    <button class="btn btn-primary" type="submit">
+        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>&nbsp;Editar
+    </button>
+}
+<div>
+    @Html.ActionLink("Ir à lista dos alunos matriculados", "Index")
+</div>
+<script type="text/javascript" src="~/Scripts/sistema/matricula.js"></script>
